@@ -6,25 +6,18 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:11:03 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/19 10:33:37 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:04:42 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int i)
+int	ft_isprint(int i)
 {
-	if (i >= 32 && i <= 126 )
+	if (i >= 32 && i <= 126)
 	{
 		return (1);
 	}
 	else
 		return (0);
 }
-// int main()
-// {
-// 	 int i;
-// 	 i = -1;
-// 	 printf
-       
-// }

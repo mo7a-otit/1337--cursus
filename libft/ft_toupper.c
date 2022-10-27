@@ -6,23 +6,19 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:05:07 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/17 14:55:14 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/10/27 14:07:13 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int o)
+int	ft_toupper(int o)
 {
-    if (o >= 'a' && o <= 'z')
-    {
-        o -= 32;
-        return  (o);
-    }
-    else 
-        return (o);
+	if (o >= 'a' && o <= 'z')
+	{
+		o -= 32;
+		return (o);
+	}
+	else
+		return (o);
 }
-// int main()
-// {
-//    printf("%c", ft_toupper('2'));
-// }

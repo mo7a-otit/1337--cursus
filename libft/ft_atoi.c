@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:09:20 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/21 16:13:33 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/10/27 14:20:24 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	unsigned long		var;
-	int		sign;
+	int				i;
+	unsigned long	var;
+	int				sign;
 
 	i = 0;
 	sign = 1;
 	var = 0;
-	while ((str[i] >= 9 && str[i] <= 13)
-		|| (str[i] == ' '))
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -41,9 +40,3 @@ int	ft_atoi(const char *str)
 		return (0);
 	return (var * sign);
 }
-
-// int	main()
-// {
-// 	char n[40] = "-99999999999999999999999999";
-// 	printf("%d", ft_atoi(n));
-// }
