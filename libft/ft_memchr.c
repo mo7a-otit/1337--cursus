@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:09:53 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/02 20:46:52 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/03 17:52:56 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	char s[] = "othmane";
-// 	int c = 'h';
-// 	printf(">>%s", ft_memchr(s, c, 4));
-// }

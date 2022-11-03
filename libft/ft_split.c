@@ -6,13 +6,27 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:20:20 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/27 12:12:36 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/03 22:12:06 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**alloc(const char *s, char c)
+static void	*ft_free(char **p)
+{
+	int	i;
+
+	i = 0;
+	while (p[i])
+	{
+		free(p[i]);
+		i ++;
+	}
+	free(p);
+	return (0);
+}
+
+static char	**alloc(const char *s, char c)
 {
 	int		count;
 	int		i;
@@ -41,17 +55,15 @@ char	**alloc(const char *s, char c)
 	return (p);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**mini_split(char const *s, char c, char **m)
 {
 	size_t	i;
 	int		start;
 	int		k;
-	char	**m;
 
 	k = 0;
 	i = 0;
 	start = -1;
-	m = alloc(s, c);
 	if (!m)
 		return (0);
 	while (i <= ft_strlen(s))
@@ -61,10 +73,26 @@ char	**ft_split(char const *s, char c)
 		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
 		{
 			m[k++] = ft_substr(s, start, (i - start));
+			if (!m[k - 1])
+				return (ft_free(m));
 			start = -1;
 		}
 		i++;
 	}
 	m[k] = NULL;
+	return (m);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**m;
+	char	**x;
+
+	x = alloc (s, c);
+	if (!x)
+		return (0);
+	m = mini_split (s, c, x);
+	if (!m)
+		return (0);
 	return (m);
 }
