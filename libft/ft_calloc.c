@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:26:39 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/27 10:57:57 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:05:22 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,9 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return (0);
 }
+
+// int main()
+// {
+// 	// ft_calloc(5, sizeof(int));
+// 	printf("%s", ft_calloc(5, sizeof(int)));
+// }

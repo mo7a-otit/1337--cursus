@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:02:44 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/27 11:21:53 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/01 17:05:17 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+// int main()
+// {
+// 	printf("%d" ,ft_memcmp("othmane", "otlmane", 5));
+// }

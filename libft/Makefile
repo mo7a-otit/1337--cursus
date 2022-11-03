@@ -6,7 +6,7 @@
 #    By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/16 20:50:34 by otitebah          #+#    #+#              #
-#    Updated: 2022/10/26 15:42:12 by otitebah         ###   ########.fr        #
+#    Updated: 2022/10/28 10:40:49 by otitebah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,8 @@ $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
 clean:
-	rm -rf $(NAME)
-fclean:
-	rm -rf  $(OBJ)
+	rm -f $(OBJ)
+fclean: clean
+	rm -f  $(NAME)
 
 re : fclean all
-

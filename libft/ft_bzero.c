@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:53:52 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/27 10:55:49 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/01 09:37:23 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((char *)s)[i] = 0;
+		((unsigned char *)s)[i] = 0;
 		i++;
 	}
 }

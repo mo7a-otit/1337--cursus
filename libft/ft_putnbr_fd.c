@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 12:19:09 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/27 11:53:14 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/02 22:47:00 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483647 - 1)
-		write(fd, "-2147483648", 11);
-	if (n >= 0 && n < 10)
-		ft_putchar_fd(n + '0', fd);
-	if (n < 0)
+	long a;
+
+	a = (long)n;
+	// if (a == -2147483648)
+	// 	ft_putstr_fd("-2147483648", fd);
+	if (a < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n = n * -1;
-		ft_putchar_fd(n + '0', fd);
+		a = a * -1;
 	}
-	else if (n > 9)
+	if (a > 9)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		ft_putnbr_fd(a / 10, fd);
+		ft_putchar_fd(a % 10 + '0', fd);
 	}
+	else
+		ft_putchar_fd(a + '0', fd);
 }
