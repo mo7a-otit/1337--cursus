@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 13:56:27 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/30 11:58:57 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:46:10 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	m[i] = '\0';
 	return (m);
 }
-// int main()
-// {
-// 	printf("%s", ft_strtrim("abcdabbba", "ab"));
-// }

@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:09:20 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/01 09:33:50 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/05 16:02:29 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	ft_atoi(const char *str)
 	{
 		var = (var * 10) + str[i] - '0';
 		i++;
+		if (var > 9223372036854775807 && sign == 1)
+			return (-1);
+		else if (var > 9223372036854775807 && sign == -1)
+			return (0);
 	}
-	if (var > 9223372036854775807 && sign == 1)
-		return (-1);
-	else if (var > 9223372036854775807 && sign == -1)
-		return (0);
 	return (var * sign);
 }

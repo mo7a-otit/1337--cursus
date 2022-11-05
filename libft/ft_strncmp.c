@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 08:50:41 by otitebah          #+#    #+#             */
-/*   Updated: 2022/10/27 13:49:47 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:49:26 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	s11 = (unsigned char *)s1;
 	s22 = (unsigned char *)s2;
 	i = 0;
-	while ((s11[i] || s22[i]) && (i < n))
+	while ((i < n) && (s11[i] || s22[i]))
 	{
 		if (s11[i] != s22[i])
 			return (s11[i] - s22[i]);

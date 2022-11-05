@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 07:55:59 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/03 22:05:53 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:43:55 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	i = 0;
+	if (d == s)
+		return (d);
 	if (d == NULL && s == NULL)
 		return (NULL);
 	while (i < n)

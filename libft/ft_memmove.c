@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:20:59 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/03 22:06:29 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:49:04 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	i = 0;
 	if (dest == NULL && src == NULL)
 		return (NULL);
+	if (dest == src)
+		return (dest);
 	else if (dest > src)
 	{
 		while (len--)

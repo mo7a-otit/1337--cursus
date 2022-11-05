@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:26:39 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/03 22:36:19 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:46:35 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if (count * size > SIZE_MAX)
+	if (size && count > SIZE_MAX / size)
 		return (0);
 	p = malloc(count * size);
 	if (p)
