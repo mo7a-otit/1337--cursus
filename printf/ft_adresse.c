@@ -6,13 +6,28 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 23:54:13 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/11 02:40:52 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/11 20:19:33 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexa_p(unsigned long n)
+static int	ft_count(unsigned long n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		n = n / 16;
+		len++;
+	}
+	return (len);
+}
+
+static int	ft_hexa_p(unsigned long n)
 {
 	if (n > 15)
 	{
@@ -24,14 +39,9 @@ int	ft_hexa_p(unsigned long n)
 	return (count(n));
 }
 
-int	ft_adresse(unsigned long n, int base)
+int	ft_adresse(unsigned long n)
 {
-	if (base == 'p')
-	{
-		ft_putstr("0x");
-		ft_hexa_p(n);
-	}
-	else
-		return (0);
-	return (count (n) + 2);
+	ft_putstr("0x");
+	ft_hexa_p(n);
+	return (ft_count (n) + 2);
 }

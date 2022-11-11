@@ -6,13 +6,13 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:13:36 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/11 02:44:49 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/11 20:15:23 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count(unsigned long n)
+int	count(unsigned int n)
 {
 	int	len;
 

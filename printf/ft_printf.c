@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:08:33 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/11 03:02:30 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/11 20:16:04 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ static int	ft_check(const char *str, va_list args, int i, int count)
 			else if (str[i] == 's')
 				count += ft_putstr (va_arg (args, char *));
 			else if (str[i] == 'p')
-				count += ft_adresse (va_arg (args, unsigned long), str[i]);
+				count += ft_adresse (va_arg (args, unsigned long));
 			else if ((str[i] == 'd') || (str[i] == 'i'))
 				count += ft_putnbr (va_arg (args, int));
 			else if (str[i] == 'x' || str[i] == 'X')
-				count += ft_hexa (va_arg (args, int), str[i]);
+				count += ft_hexa (va_arg (args, unsigned int), str[i]);
 			else if (str[i] == 'u')
 				count += ft_unputnbr (va_arg (args, unsigned int));
-			else if (str[i] == '%')
+			else
 				count += ft_putchar (str[i]);
 		}
 		else
