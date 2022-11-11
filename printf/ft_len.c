@@ -6,28 +6,28 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:50:04 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/10 18:21:04 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/11 02:50:29 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_len(long nb)
+int	ft_len(long nb)
 {
-    long len;
+	long	len;
 
-    len = 0;
-    if (nb == 0)
-        return (1);
-    if (nb < 0)
-    {
-        nb = nb * -1;
-        len++;
-    }
-    while (nb > 0)
-    {
-        nb = nb / 10;
-        len++;
-    }
-    return (len);
+	len = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+	{
+		nb = nb * -1;
+		len++;
+	}
+	while (nb > 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
 }
