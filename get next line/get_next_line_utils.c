@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 10:56:44 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/21 18:04:05 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:32:14 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,35 @@ int ft_strlen(char *str)
     int i;
 
     i = 0;
-    while (str[i] && str[i] == '\n')
-        i++;
-    if (str[i] == '\n')
+    if (!str)
+        return (NULL);
+    while (str[i])
         i++;
     return (i);    
+}
+
+char    *ft_strchr(const char *s, int c)
+{
+    int             i;
+    char    *a;
+    char    o;
+    int             b;
+
+    o = (char )c;
+    a = (char *)s;
+    b = ft_strlen(a);
+    i = 0;
+    if (o == '\0')
+        return (&a[b]);
+    while (a[i])
+    {
+        if (a[i] == o)
+        {
+                return (a + i);
+        }
+        i++;
+    }
+    return (0);
 }
 
 char ft_strjoin(char *s1, char *s2)
@@ -30,10 +54,6 @@ char ft_strjoin(char *s1, char *s2)
     int i;
     int j;
 
-    if (s1 || !s2)
-        return (NULL);
-    if (!s1 || s2)
-        return (NULL);
     if (!s1 || !s2)
         return (NULL);
     m = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
