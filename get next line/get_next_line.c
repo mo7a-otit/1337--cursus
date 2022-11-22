@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:19:17 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/22 00:01:24 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/22 02:21:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *get_read(int fd, char *buf)
+char *ft_read(int fd, char *buf)
 {
+    char *str;
     int bytes;
 
     if (!buf)
-    {
-        buf = malloc(1 * sizeof(char))
-        buf[0] = '\0';
-    }
+        return (NULL);
     bytes = 1;
     while (bytes > 0)
     {
@@ -59,8 +57,18 @@ char    *get_line(char *str)
     m[i] = '\0';
     return (m);
 }
+char *ft_save(char *save)
+{
+    
+}
 
 char *get_next_line(int fd)
 {
+    char *line;
+    static char *save;
     
+    if (fd < 0 || BUFFER_SIZE <= 0)
+        return (0);
+    line = get_line(save);
+    save = 
 }
