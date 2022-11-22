@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:19:17 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/22 23:56:03 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/23 00:03:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ char *get_next_line(int fd)
     if (fd < 0 || BUFFER_SIZE <= 0)
         return (0);
     save = ft_read(fd, save);
+    if (!save)
+        return (0);
     line = get_line (save);
     save = get_next (line);
     
