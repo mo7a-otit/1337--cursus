@@ -3,34 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:19:17 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/22 17:49:38 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/22 23:56:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char *ft_read(int fd, char *save)
-{
-    char *buf;
-    int bytes;
-
-    if (!save)
-        return (NULL);
-    buf = malloc(BUFFER_SIZE + 1);
-    bytes = 1;
-    while (bytes > 0)
-    {
-        bytes = read(fd, buf, BUFFER_SIZE);
-        buf[BUFFER_SIZE] = '\0';
-        save = ft_strjoin(save, buf);
-        if (ft_strchr(buf, '\n'))
-            break;
-    }
-    return (buf);
-}
 
 char    *get_line(char *str)
 {
@@ -42,9 +22,9 @@ char    *get_line(char *str)
         return (0);
     while (str[i] && str[i] != '\n')
         i++;
-    m = malloc(i + 2);
+    m = (char *)malloc(i + 2);
     if (!m)
-        return (0);
+        return (NULL);
     i = 0;
     while (str[i] && str[i] != '\n')
     {
@@ -59,9 +39,10 @@ char    *get_line(char *str)
     m[i] = '\0';
     return (m);
 }
-char *ft_save(char *save)
+
+char *get_next(char *save)
 {
-    char *str;
+    char *next;
     int i;
     int j;
 
@@ -70,16 +51,39 @@ char *ft_save(char *save)
         return (NULL);
     while (save[i] && save[i] != '\n')
         i++;
-    str = malloc(ft_strlen(save) - i + 1);
-    if (!str)
+    next = (char *)malloc(ft_strlen(save) - i + 1);
+    if (!next)
         return (NULL);
     if (save[i] == '\n')
         i++;
     j = 0;
     while (save[i])
-        str[j++] = save[i++];
-    return (str);
+        next[j++] = save[i++];
+    next[j] = '\0';
+    return (next);
     
+}
+
+char *ft_read(int fd, char *save)
+{
+    char *buf;
+    int bytes;
+
+    if (!buf)
+        return (NULL);
+    buf = malloc(BUFFER_SIZE + 1);
+    bytes = 1;
+    while (new_line(save, '\n') == 0 && bytes > 0)
+    {
+        bytes = read(fd, buf, BUFFER_SIZE);
+        if (bytes == -1)
+            return (NULL);
+        buf[BUFFER_SIZE] = '\0';
+        save = ft_strjoin(save, buf);
+        if (ft_strchr(buf, '\n'))
+            break;
+    }
+    return (save);
 }
 
 char *get_next_line(int fd)
@@ -89,8 +93,9 @@ char *get_next_line(int fd)
     
     if (fd < 0 || BUFFER_SIZE <= 0)
         return (0);
-    save = ft_save (line);
+    save = ft_read(fd, save);
     line = get_line (save);
+    save = get_next (line);
     
     return (line);
 }
@@ -101,7 +106,7 @@ int main()
     // char buf[5];
     // char buf2[3];
     int fd;
-    fd = open("file.txt", O_RDWR | 0777);
+    fd = open("file.txt", O_RDONLY);
     // read(fd, buf2, BUFFER_SIZE);
     printf("%s", get_next_line(fd));
 }

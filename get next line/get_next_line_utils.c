@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 10:56:44 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/22 16:37:15 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/22 23:40:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@ int ft_strlen(char *str)
     while (str[i])
         i++;
     return (i);    
+}
+
+int new_line(char *s, int c)
+{
+    int i;
+
+    i = 0;
+    if (!s)
+        return (0);
+    if (c == '\0')
+        return (0);
+    while (s[i])
+    {
+        if (s[i] == (char)c)
+            return (1);
+        i++;
+    } 
+    return (0);
 }
 
 char    *ft_strchr(const char *s, int c)
