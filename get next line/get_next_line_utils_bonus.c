@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 22:12:19 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/30 14:31:09 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:07:48 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strchr(const char *s, int c)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*m;
+	char		*m;
 	size_t		i;
 	size_t		j;
 

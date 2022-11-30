@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 22:40:43 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/30 14:20:12 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:08:06 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
 
 size_t	ft_strlen(char *str);
 char	*ft_strchr(const char *s, int c);
