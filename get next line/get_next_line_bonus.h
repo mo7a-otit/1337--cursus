@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 22:40:43 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/25 22:43:34 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:20:12 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,12 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
+size_t	ft_strlen(char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
-int		ft_strlen(char *str);
 char	*get_next_line(int fd);
-char	*ft_get_line(char *str, int i);
-char	*ft_read(int fd, char *buf);
-char	*ft_strjoin(char *s1, char *s2);
 #endif

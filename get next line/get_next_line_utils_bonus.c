@@ -6,15 +6,15 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 22:12:19 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/25 22:41:48 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:12:36 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (!str)

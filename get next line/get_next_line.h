@@ -6,7 +6,7 @@
 /*   By: otitebah <otitebah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 10:56:34 by otitebah          #+#    #+#             */
-/*   Updated: 2022/11/25 22:46:52 by otitebah         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:18:39 by otitebah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
+size_t	ft_strlen(char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
-int		ft_strlen(char *str);
 char	*get_next_line(int fd);
-char	*ft_get_line(char *str, int i);
-char	*ft_read(int fd, char *buf);
-char	*ft_strjoin(char *s1, char *s2);
 #endif
